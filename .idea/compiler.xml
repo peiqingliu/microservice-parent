@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="microsercive-webservice" />
+        <module name="microserver-security-jwt" />
+        <module name="microservice-aboutThread" />
+        <module name="microservice-aop-Permission" />
+        <module name="microservice-async" />
+        <module name="microservice-commons" />
+        <module name="microservice-config-client" />
+        <module name="microservice-config-server" />
+        <module name="microservice-discovery-eureka" />
+        <module name="microservice-gateway-zuul-filter" />
+        <module name="microservice-java8" />
+        <module name="microservice-msgsend" />
+        <module name="microservice-provider-user" />
+        <module name="microservice-rabbitmq" />
+        <module name="microservice-read-propertoes" />
+        <module name="microservice-redis" />
+        <module name="microservice-redis-lock" />
+        <module name="microservice-redis-session" />
+        <module name="microservice-redis-session02" />
+        <module name="microservice-Schedule" />
+        <module name="microservice-shardingjdbc" />
+        <module name="microservice-sso-server" />
+        <module name="microservice-swagger2" />
+        <module name="microservice-system-beans" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

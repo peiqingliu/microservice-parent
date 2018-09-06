@@ -1,0 +1,24 @@
+redis:
+  cache:
+    expiration: 3600
+
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    database: mysql
+  datasource:
+      url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf8&useSSL=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf8&useSSL=true
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.jdbc.Driver
+#将服务注册到eureka上面  就是一个客户端，既可以从这里提供服务，也可以获取服务

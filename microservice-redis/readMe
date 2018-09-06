@@ -1,0 +1,93 @@
+【redis数据结构 – 简介】
+
+redis是一种高级的key:value存储系统，其中value支持五种数据类型：
+
+1.字符串（strings）
+2.字符串列表（lists）
+3.字符串集合（sets）
+4.有序字符串集合（sorted sets）
+5.哈希（hashes）
+
+而关于key，有几个点要提醒大家：
+
+1.key不要太长，尽量不要超过1024字节，这不仅消耗内存，而且会降低查找的效率；
+2.key也不要太短，太短的话，key的可读性会降低；
+3.在一个项目中，key最好使用统一的命名模式，例如user:10000:passwd。
+
+
+
+
+
+
+
+【redis数据结构 – 集合】
+
+redis的集合，是一种无序的集合，集合中的元素没有先后顺序。
+
+集合相关的操作也很丰富，如添加新元素、删除已有元素、取交集、取并集、取差集等。我们来看例子：
+
+复制代码代码如下:
+
+//向集合myset中加入一个新元素"one"
+127.0.0.1:6379> sadd myset "one"
+(integer) 1
+127.0.0.1:6379> sadd myset "two"
+(integer) 1
+//列出集合myset中的所有元素
+127.0.0.1:6379> smembers myset
+1) "one"
+2) "two"
+//判断元素1是否在集合myset中，返回1表示存在
+127.0.0.1:6379> sismember myset "one"
+(integer) 1
+//判断元素3是否在集合myset中，返回0表示不存在
+127.0.0.1:6379> sismember myset "three"
+(integer) 0
+//新建一个新的集合yourset
+127.0.0.1:6379> sadd yourset "1"
+(integer) 1
+127.0.0.1:6379> sadd yourset "2"
+(integer) 1
+127.0.0.1:6379> smembers yourset
+1) "1"
+2) "2"
+//对两个集合求并集
+127.0.0.1:6379> sunion myset yourset
+1) "1"
+2) "one"
+3) "2"
+4) "two"
+对于集合的使用，也有一些常见的方式，比如，QQ有一个社交功能叫做“好友标签”，大家可以给你的好友贴标签，比如“大美女”、“土豪”、“欧巴”等等，这时就可以使用redis的集合来实现，把每一个用户的标签都存储在一个集合之中。
+
+【redis数据结构 – 哈希】
+
+最后要给大家介绍的是hashes，即哈希。哈希是从redis-2.0.0版本之后才有的数据结构。
+
+hashes存的是字符串和字符串值之间的映射，比如一个用户要存储其全名、姓氏、年龄等等，就很适合使用哈希。
+
+我们来看一个例子：
+
+复制代码代码如下:
+
+//建立哈希，并赋值
+127.0.0.1:6379> HMSET user:001 username antirez password P1pp0 age 34
+OK
+//列出哈希的内容
+127.0.0.1:6379> HGETALL user:001
+1) "username"
+2) "antirez"
+3) "password"
+4) "P1pp0"
+5) "age"
+6) "34"
+//更改哈希中的某一个值
+127.0.0.1:6379> HSET user:001 password 12345
+(integer) 0
+//再次列出哈希的内容
+127.0.0.1:6379> HGETALL user:001
+1) "username"
+2) "antirez"
+3) "password"
+4) "12345"
+5) "age"
+6) "34"

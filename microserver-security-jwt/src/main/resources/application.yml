@@ -1,0 +1,24 @@
+server:
+  port: 1017
+spring:
+  application:
+    name: microservice-security-jwt
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    database: mysql
+  datasource:
+      url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf8&useSSL=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://eureka-primary:8011/eureka/

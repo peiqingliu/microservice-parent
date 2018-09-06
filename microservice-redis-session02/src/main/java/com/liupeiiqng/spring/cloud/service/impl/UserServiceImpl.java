@@ -1,0 +1,27 @@
+package com.liupeiiqng.spring.cloud.service.impl;
+
+
+import com.liupeiiqng.spring.cloud.domain.User;
+import com.liupeiiqng.spring.cloud.repository.UserRepository;
+import com.liupeiiqng.spring.cloud.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+
+/**
+ * @author liupeiqing
+ * @data 2018/8/8 20:19
+ */
+@Service
+public class UserServiceImpl implements UserService {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Override
+    @Cacheable(value = "user_info_02",key = " 'user_'+ #userId")
+    public User findByUserId(Long userId) {
+       User user = this.userRepository.findOne(userId);
+        return user;
+    }
+}

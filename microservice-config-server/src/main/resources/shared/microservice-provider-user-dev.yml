@@ -1,0 +1,10 @@
+redis:
+  cache:
+    expiration: 3600
+name: liupeiqing
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf8&useSSL=true
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.jdbc.Driver

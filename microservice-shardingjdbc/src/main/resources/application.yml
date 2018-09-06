@@ -1,0 +1,80 @@
+server:
+  port: 1020
+spring:
+  application:
+    name: microservice-shardingjdbc
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    database: mysql
+    naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.liupeiqing.spring.cloud.domain
+  config-location: classpath:mybatis-config.xml
+
+# 对分库分表的支持
+sharding:
+  jdbc:
+    datasource:
+      names: ds_0,ds_1,ds_0_slave,ds_1_slave
+      ds_0:
+        type: com.zaxxer.hikari.HikariDataSource
+        jdbc-url: jdbc:mysql://localhost:3306/ds_0?characterEncoding=utf8&useSSL=true
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+      ds_1:
+        type: com.zaxxer.hikari.HikariDataSource
+        jdbc-url: jdbc:mysql://localhost:3306/ds_1?characterEncoding=utf8&useSSL=true
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+      ds_0_slave:  #此时 ds2作为 ds0的从库，本应在另一台服务器上做演示，为了测试 还是用同一个服务器  另一个库吧
+        type: com.zaxxer.hikari.HikariDataSource
+        jdbc-url: jdbc:mysql://localhost:3306/ds_0_slave?characterEncoding=utf8&useSSL=true
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+      ds_1_slave:
+        type: com.zaxxer.hikari.HikariDataSource
+        jdbc-url: jdbc:mysql://localhost:3306/ds_1_slave?characterEncoding=utf8&useSSL=true
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+    config:  # 配置读写分离  读都落在从库，写落在主库
+      sharding:
+        default-database-strategy:   # 分库规则
+          inline:
+            sharding-column: order_id  #根据order_id进行分库
+            algorithm-expression: ds_${user_id % 2}   #如果order_id mod 2为奇数 则落在ds_master_1库 ds0，偶数则落在ds_master_0库 ds1
+        tables:  # 分表规则
+          t_order:
+            actual-data-nodes: ds_${0..1}.t_order_${0..1}  #两个数据源-两个库
+            table-strategy:
+              inline:
+                sharding-column: user_id  #根据user_id进行分表
+                algorithm-expression: t_order_${order_id % 2}  #根据user_id进行分表，如果user_id mod 2为奇数则落在t_order_0表，偶数则落在t_order_1表
+            key-generator-column-name: id  # 使用user_id作为分布式主键
+        props:
+          sql:
+            show: true   # 开启SQL显示，默认值: false，注意：仅配置读写分离时不会打印日志！！！
+        master-slave-rules:  # 逻辑主从库名和实际主从库映射关系
+          ds_0:
+            master-data-source-name: ds_0
+            slave-data-source-names: ds_0_slave  #可以配置多个，逗号分开
+           # load-balance-algorithm-type: round_robin  #如果有多个从库 配置从库选择策略，提供轮询与随机，这里选择用轮询
+          ds_1:
+            master-data-source-name: ds_1
+            slave-data-source-names: ds_1_slave
+
+
+
+

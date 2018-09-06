@@ -1,0 +1,16 @@
+使用springboot 1.5.9.RELEASE，同样碰到这个问题
+
+Caused by: org.springframework.amqp.AmqpException: No method found for class [B
+
+找了半天，专门写了一个测试项目，最终发现是因为传输对象为自定义对象时没有 implements Serializable
+
+1.表现现象为，如果项目能启动，执行发送消息时出现No method found for class [B，则是发送消息时的对象没序列化，如
+User user = new User(i, "name_" + i, i + 5, new Date());
+rabbitTemplate.convertAndSend("fanout4Hello", "aaa", user);
+User 未implements Serializable时发送消息会出错。
+
+2.另外一种现象是项目启动时直接报 No method found for class [B，则可能是原队列中还有未消化完的数据，且数据类型和新的receiver数据类型不一致
+如mq 的Queues中还有未消费完的数据a,类型为A，但是代码中的receiver接受的是类型B，此时启动后消费者去消费消息时类型转换错误，则一直抛异常。
+
+
+解决办法：针对第一种现象，直接将User implements Serializable即可，第二种现象直接删除队列，或者清空队列中的message(仅提供解决思路，不对结果负责)

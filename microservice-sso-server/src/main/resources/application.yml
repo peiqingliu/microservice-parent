@@ -1,0 +1,19 @@
+server:
+  port: 1022
+spring:
+  application:
+    name: microservice-sso-server
+  freemarker:
+    allow-request-override: false
+    allow-session-override: false
+    cache: true
+    charset: utf-8
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    prefer-file-system-access: false
+    suffix: .ftl
+    template-loader-path: classpath:/templates/

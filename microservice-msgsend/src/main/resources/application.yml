@@ -1,0 +1,5 @@
+server:
+  port: 1019
+spring:
+  application:
+    name: microservice-msgsend

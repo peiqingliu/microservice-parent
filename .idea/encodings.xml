@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microsercive-webservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microserver-security-jwt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-Schedule" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-aboutThread" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-aop-Permission" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-async" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-commons" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-config-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-discovery-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-gateway-zuul-filter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-java8" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-msgsend" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-provider-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-rabbitmq" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-read-propertoes" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-redis-lock" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-redis-session" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-redis-session02" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-shardingjdbc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-sso-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-swagger2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-system-beans" charset="UTF-8" />
+  </component>
+</project>
