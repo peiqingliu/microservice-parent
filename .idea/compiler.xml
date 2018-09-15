@@ -30,7 +30,14 @@
         <module name="microservice-sso-server" />
         <module name="microservice-swagger2" />
         <module name="microservice-system-beans" />
+        <module name="microserviceconfiguration" />
+        <module name="microservicefegin" />
+        <module name="microservicessoclient1" />
+        <module name="microservicessoclient2" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microserviceprovideuser" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

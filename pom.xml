@@ -28,6 +28,13 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>Brussels-SR4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>Edgware.RELEASE</version>
@@ -102,6 +109,11 @@
         <module>microservice-sso-server</module>
         <module>microservice-system-beans</module>
         <module>microservice-commons</module>
+        <module>microservice-provide-user</module>
+        <module>microservice-configuration</module>
+        <module>microservice-fegin</module>
+        <module>microservice-sso-client1</module>
+        <module>microservice-sso-client2</module>
     </modules>
 
     <!-- 添加spring-boot的maven插件 -->

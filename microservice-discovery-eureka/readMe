@@ -1,0 +1,4 @@
+
+eureka启动多个实例
+--spring.profiles.active=primary
+programe arguments一栏添加参数上面

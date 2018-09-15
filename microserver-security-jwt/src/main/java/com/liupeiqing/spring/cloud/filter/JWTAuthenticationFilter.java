@@ -6,6 +6,8 @@ import com.liupeiqing.spring.cloud.domain.Role;
 import com.liupeiqing.spring.cloud.moudle.LoginUser;
 import com.liupeiqing.spring.cloud.utils.JwtTokenUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -41,6 +43,8 @@ import java.util.List;
  */
 @Slf4j
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+
+  //  private static final Logger log = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
 
     private ThreadLocal<Integer> rememberMe = new ThreadLocal<Integer>();
     private AuthenticationManager authenticationManager;

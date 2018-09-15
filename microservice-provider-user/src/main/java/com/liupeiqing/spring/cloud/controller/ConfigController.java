@@ -31,7 +31,7 @@ public class ConfigController {
     @Autowired
     private UserDaoCustom userDaoCustomser;
 
-    @GetMapping("/api/{id}")
+    @GetMapping("/{id}")
     public User findUserById(@PathVariable("id") Long id){
         User findOne = this.userRepository.findOne(id);
         return findOne;
@@ -48,6 +48,12 @@ public class ConfigController {
     public User findUserByUserName(@Param("username") String username){
         User user = this.userDaoCustomser.findUserByusername(username);
         return user;
+    }
+
+    @GetMapping("/api/{id}")
+    public String getString(@PathVariable Integer id){
+        String string = "hello world!";
+        return string;
     }
     /**
      * 本地服务实例的信息

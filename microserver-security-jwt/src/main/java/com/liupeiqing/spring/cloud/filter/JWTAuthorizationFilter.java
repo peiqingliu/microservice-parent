@@ -2,6 +2,8 @@ package com.liupeiqing.spring.cloud.filter;
 
 import com.liupeiqing.spring.cloud.utils.JwtTokenUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,6 +34,7 @@ import java.util.List;
 @Slf4j
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
+    private static final Logger log = LoggerFactory.getLogger(JWTAuthorizationFilter.class);
     public JWTAuthorizationFilter(AuthenticationManager authenticationManager) {
         super(authenticationManager);
     }

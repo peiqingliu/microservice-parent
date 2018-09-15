@@ -1,16 +1,19 @@
 package com.liupeiqing.spring.cloud.feginClient;
 
-import com.liupeiqing.spring.cloud.User.User;
+import com.liupeiqing.spring.cloud.authbeans.AuthUser;
+import com.liupeiqing.spring.cloud.utils.R;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author liupeiqing
  * @data 2018/9/4 15:39
  */
-@FeignClient(name = "microservice-provider-user",fallback = UserFallback.class)
+
+@FeignClient("microservice-system-beans")
 public interface UserFeignClient {
 
-    @GetMapping("/api")
-    public User findUserByUserName(String username);
+    @RequestMapping(value = "/findUserByName/{username}",method = RequestMethod.GET)
+    R<AuthUser> findUserByusername(@RequestParam("username") String username);
 }
+
