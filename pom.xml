@@ -114,6 +114,7 @@
         <module>microservice-fegin</module>
         <module>microservice-sso-client1</module>
         <module>microservice-sso-client2</module>
+        <module>microservice-elasticsearch</module>
     </modules>
 
     <!-- 添加spring-boot的maven插件 -->

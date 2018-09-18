@@ -13,6 +13,7 @@
     <file url="file://$PROJECT_DIR$/microservice-config-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-configuration" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-discovery-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-elasticsearch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-fegin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-gateway-zuul-filter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-java8" charset="UTF-8" />

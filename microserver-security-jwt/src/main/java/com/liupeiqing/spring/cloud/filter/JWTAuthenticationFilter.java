@@ -47,12 +47,13 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
   //  private static final Logger log = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
 
     private ThreadLocal<Integer> rememberMe = new ThreadLocal<Integer>();
+
     private AuthenticationManager authenticationManager;
 
 
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager){
         this.authenticationManager = authenticationManager;
-        super.setFilterProcessesUrl("/auth/login");
+        super.setFilterProcessesUrl("/auth/login");  //登录
     }
 
     @Override

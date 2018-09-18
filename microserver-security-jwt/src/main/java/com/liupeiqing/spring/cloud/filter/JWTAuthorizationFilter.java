@@ -34,7 +34,7 @@ import java.util.List;
 @Slf4j
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
-    private static final Logger log = LoggerFactory.getLogger(JWTAuthorizationFilter.class);
+   // private static final Logger log = LoggerFactory.getLogger(JWTAuthorizationFilter.class);
     public JWTAuthorizationFilter(AuthenticationManager authenticationManager) {
         super(authenticationManager);
     }
