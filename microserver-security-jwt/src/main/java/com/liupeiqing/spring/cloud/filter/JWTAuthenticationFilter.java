@@ -79,6 +79,9 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                                          HttpServletResponse response,
                                          FilterChain chain,
                                          Authentication authResult){
+        /**
+         * 一般返回的是UserDetails的实例
+         */
         JwtUser jwtUser = (JwtUser) authResult.getPrincipal();
         log.info("jwtUser" + jwtUser.toString());
         System.out.print("jwtUser" + jwtUser.toString());

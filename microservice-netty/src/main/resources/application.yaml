@@ -1,0 +1,5 @@
+server:
+  port: 1023
+spring:
+  application:
+    name: microservice-netty

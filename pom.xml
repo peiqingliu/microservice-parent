@@ -22,6 +22,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <jwt.version>0.9.0</jwt.version>
+        <swagger2.version>2.9.0</swagger2.version>
+        <zuul-ratelimit>1.7.0.RELEASE</zuul-ratelimit>
     </properties>
 
     <!-- 引入spring cloud的依赖 -->
@@ -115,6 +117,10 @@
         <module>microservice-sso-client1</module>
         <module>microservice-sso-client2</module>
         <module>microservice-elasticsearch</module>
+        <module>microservice-gateway</module>
+        <module>microservice-netty</module>
+        <module>microservice-rpc</module>
+        <module>microservice-socket</module>
     </modules>
 
     <!-- 添加spring-boot的maven插件 -->

@@ -12,6 +12,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 /**
+ * 认证服务1-对称加密方式
  * @author liupeiqing
  * @data 2018/9/3 20:50
  */
@@ -59,6 +60,7 @@ public class SsoAuthorizationServerConfig extends AuthorizationServerConfigurerA
 
     /**
      * 用来配置授权（authorization）以及令牌（token）的访问端点和令牌服务(token services)。
+     * 告诉spring security token的生成方式
      * @param endpoints
      * @throws Exception
      */

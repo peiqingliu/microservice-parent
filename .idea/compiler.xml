@@ -33,6 +33,10 @@
         <module name="microserviceconfiguration" />
         <module name="microserviceelasticsearch" />
         <module name="microservicefegin" />
+        <module name="microservicegateway" />
+        <module name="microservicenetty" />
+        <module name="microservicerpc" />
+        <module name="microservicesocket" />
         <module name="microservicessoclient1" />
         <module name="microservicessoclient2" />
       </profile>
