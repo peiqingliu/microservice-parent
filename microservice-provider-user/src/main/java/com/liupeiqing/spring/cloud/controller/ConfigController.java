@@ -1,11 +1,9 @@
 package com.liupeiqing.spring.cloud.controller;
 
 import com.liupeiqing.spring.cloud.dao.UserDaoCustom;
-import com.liupeiqing.spring.cloud.dao.impl.UserRepositoryImpl;
 import com.liupeiqing.spring.cloud.domain.User;
 import com.liupeiqing.spring.cloud.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,6 +55,13 @@ public class ConfigController {
         String string = "hello world!";
         return string;
     }
+
+    @GetMapping("/hello")
+    public String ReturnBy(@Param("username") String username,@Param("age") int age){
+        String str = "hello" + username + "/" + age;
+        return str;
+    }
+
     /**
      * 本地服务实例的信息
      * @return

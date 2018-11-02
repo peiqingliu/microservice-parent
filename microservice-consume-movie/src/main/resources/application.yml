@@ -1,0 +1,25 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: microservice-consumer-movie
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    database: mysql
+  datasource:
+      url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf8&useSSL=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-primary:8011/eureka/  #客户端与服务端交互的zone的地址  zone类似于机房 eureka放在机房里面(zong)

@@ -54,9 +54,9 @@ public class ExecutorServiceDemo {
 
     public static void main(String[] args) {
         ExecutorServiceDemo executorServiceDemo = new ExecutorServiceDemo();
-       // executorServiceDemo.testNewSingleThreadExecutor();
-       // executorServiceDemo.textNewFixedThreadPool();
-        executorServiceDemo.testNewCachedThreadPool();
+        executorServiceDemo.testNewSingleThreadExecutor();
+        //executorServiceDemo.textNewFixedThreadPool();
+        //executorServiceDemo.testNewCachedThreadPool();
     }
 
     //测试 单线程的线程池
@@ -67,7 +67,9 @@ public class ExecutorServiceDemo {
         ExecutorService executorService2 =
                 new ThreadPoolExecutor(1,1,0L,TimeUnit.MICROSECONDS,new LinkedBlockingDeque<Runnable>());
         //循环5次 但是始终还是一个 线程在执行任务
-        for (int i=0;i<5;i++){
+
+        long sTime = System.currentTimeMillis();
+        for (int i=0;i<500;i++){
             final  int task = i;  //为什么 非要用task转一下，而不是直接输出i 用final是因为
             // new Runnable() 相当于匿名内部类 智能使用一次，而且使用外部变量的时候，必须是不可变的 finnal标注
             executorService2.execute(new Runnable() { //接收一个Runnable实例
@@ -76,6 +78,23 @@ public class ExecutorServiceDemo {
                 }
             });
         }
+        long eTime = System.currentTimeMillis();
+        System.out.println("测试时间"  +(eTime - sTime));
+//        executorService2.execute(new Runnable() {
+//            long sTime = System.currentTimeMillis();
+//            @Override
+//            public void run() {
+//                for (int i=0;i<500;i++){
+//                    final  int task = i;
+//                    System.out.println("线程name为"+Thread.currentThread().getName()+"执行Asynchronous task" + task);
+//                }
+//                long eTime = System.currentTimeMillis();
+//                System.out.println("测试时间"  +(eTime - sTime));
+//            }
+//
+//
+//
+//        });
         executorService2.shutdown();
     }
 

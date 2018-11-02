@@ -31,10 +31,13 @@
         <module name="microservice-swagger2" />
         <module name="microservice-system-beans" />
         <module name="microserviceconfiguration" />
+        <module name="microserviceconsumemovie" />
         <module name="microserviceelasticsearch" />
         <module name="microservicefegin" />
         <module name="microservicegateway" />
         <module name="microservicenetty" />
+        <module name="microservicerocketmqclient" />
+        <module name="microservicerocketmqserver" />
         <module name="microservicerpc" />
         <module name="microservicesocket" />
         <module name="microservicessoclient1" />
