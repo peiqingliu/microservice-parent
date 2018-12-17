@@ -5,7 +5,7 @@ server:
 security:
   oauth2:
     client:
-      client-id: wuqianqian2
+      client-id: client_2
       client-secret: wuqianqiansecrect2
       user-authorization-uri: ${auth-server}/oauth/authorize
       access-token-uri: ${auth-server}/oauth/token

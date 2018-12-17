@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
-    <property name="log_dir" value="/lpq/logs/netty"/>
+    <property name="log_dir" value="../lpq/logs/netty"/>
     <property name="maxHistory" value="30"/>
 
     <!-- ConsoleAppender 控制台输出日志 -->

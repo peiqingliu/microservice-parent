@@ -1,6 +1,7 @@
 package com.liupeiiqng.netty.server;
 
 import com.liupeiiqng.netty.handler.DiscardServerHandler;
+import com.liupeiiqng.netty.handler.ResponseServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -126,7 +127,8 @@ public class NettyServer {
 
         @Override
         protected void initChannel(SocketChannel socketChannel) throws Exception {
-            socketChannel.pipeline().addLast(new DiscardServerHandler());
+            //socketChannel.pipeline().addLast(new DiscardServerHandler());
+            socketChannel.pipeline().addLast(new ResponseServerHandler());
         }
     }
 

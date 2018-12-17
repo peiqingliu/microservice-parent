@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.winter.mapper.ProjectMapper" >
+  <resultMap id="BaseResultMap" type="com.winter.model.Project" >
+    <id column="projId" property="projid" jdbcType="INTEGER" />
+    <result column="parentId" property="parentid" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="taskName" property="taskname" jdbcType="VARCHAR" />
+    <result column="durationDate" property="durationdate" jdbcType="VARCHAR" />
+    <result column="startDate" property="startdate" jdbcType="TIMESTAMP" />
+    <result column="endDate" property="enddate" jdbcType="TIMESTAMP" />
+    <result column="preTask" property="pretask" jdbcType="INTEGER" />
+    <result column="resource" property="resource" jdbcType="VARCHAR" />
+    <result column="importTime" property="importtime" jdbcType="TIMESTAMP" />
+    <result column="batchNum" property="batchnum" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    projId, parentId, level, taskName, durationDate, startDate, endDate, preTask, resource, 
+    importTime, batchNum
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from project
+    where projId = #{projid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from project
+    where projId = #{projid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.winter.model.Project" >
+    insert into project (projId, parentId, level, 
+      taskName, durationDate, startDate, 
+      endDate, preTask, resource, 
+      importTime, batchNum)
+    values (#{projid,jdbcType=INTEGER}, #{parentid,jdbcType=INTEGER}, #{level,jdbcType=INTEGER}, 
+      #{taskname,jdbcType=VARCHAR}, #{durationdate,jdbcType=VARCHAR}, #{startdate,jdbcType=TIMESTAMP}, 
+      #{enddate,jdbcType=TIMESTAMP}, #{pretask,jdbcType=INTEGER}, #{resource,jdbcType=VARCHAR}, 
+      #{importtime,jdbcType=TIMESTAMP}, #{batchnum,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.winter.model.Project" >
+    insert into project
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="projid != null" >
+        projId,
+      </if>
+      <if test="parentid != null" >
+        parentId,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="taskname != null" >
+        taskName,
+      </if>
+      <if test="durationdate != null" >
+        durationDate,
+      </if>
+      <if test="startdate != null" >
+        startDate,
+      </if>
+      <if test="enddate != null" >
+        endDate,
+      </if>
+      <if test="pretask != null" >
+        preTask,
+      </if>
+      <if test="resource != null" >
+        resource,
+      </if>
+      <if test="importtime != null" >
+        importTime,
+      </if>
+      <if test="batchnum != null" >
+        batchNum,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="projid != null" >
+        #{projid,jdbcType=INTEGER},
+      </if>
+      <if test="parentid != null" >
+        #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="taskname != null" >
+        #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="durationdate != null" >
+        #{durationdate,jdbcType=VARCHAR},
+      </if>
+      <if test="startdate != null" >
+        #{startdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enddate != null" >
+        #{enddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pretask != null" >
+        #{pretask,jdbcType=INTEGER},
+      </if>
+      <if test="resource != null" >
+        #{resource,jdbcType=VARCHAR},
+      </if>
+      <if test="importtime != null" >
+        #{importtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="batchnum != null" >
+        #{batchnum,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.winter.model.Project" >
+    update project
+    <set >
+      <if test="parentid != null" >
+        parentId = #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="taskname != null" >
+        taskName = #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="durationdate != null" >
+        durationDate = #{durationdate,jdbcType=VARCHAR},
+      </if>
+      <if test="startdate != null" >
+        startDate = #{startdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enddate != null" >
+        endDate = #{enddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pretask != null" >
+        preTask = #{pretask,jdbcType=INTEGER},
+      </if>
+      <if test="resource != null" >
+        resource = #{resource,jdbcType=VARCHAR},
+      </if>
+      <if test="importtime != null" >
+        importTime = #{importtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="batchnum != null" >
+        batchNum = #{batchnum,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where projId = #{projid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.winter.model.Project" >
+    update project
+    set parentId = #{parentid,jdbcType=INTEGER},
+      level = #{level,jdbcType=INTEGER},
+      taskName = #{taskname,jdbcType=VARCHAR},
+      durationDate = #{durationdate,jdbcType=VARCHAR},
+      startDate = #{startdate,jdbcType=TIMESTAMP},
+      endDate = #{enddate,jdbcType=TIMESTAMP},
+      preTask = #{pretask,jdbcType=INTEGER},
+      resource = #{resource,jdbcType=VARCHAR},
+      importTime = #{importtime,jdbcType=TIMESTAMP},
+      batchNum = #{batchnum,jdbcType=VARCHAR}
+    where projId = #{projid,jdbcType=INTEGER}
+  </update>
+</mapper>

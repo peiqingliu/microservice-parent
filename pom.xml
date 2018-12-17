@@ -124,6 +124,11 @@
         <module>microservice-rocketmq-server</module>
         <module>microservice-rocketmq-client</module>
         <module>microservice-consume-movie</module>
+        <module>microservice-resources-server</module>
+        <module>microservice-sso-resources</module>
+        <module>microservice-jdbc</module>
+        <module>microservice-mybatis</module>
+        <module>microservice-mybatis-2</module>
     </modules>
 
     <!-- 添加spring-boot的maven插件 -->

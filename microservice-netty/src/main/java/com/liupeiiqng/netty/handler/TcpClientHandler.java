@@ -24,7 +24,7 @@ public class TcpClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("client channelActive..");
-        byte[] req = " CLIENT ---> REQUEST".getBytes();
+        byte[] req = " CLIENT ---> REQUEST---->hello wuqianqian".getBytes();
         ByteBuf msg = Unpooled.buffer(req.length);
         msg.writeBytes(req);
         // 必须有flush

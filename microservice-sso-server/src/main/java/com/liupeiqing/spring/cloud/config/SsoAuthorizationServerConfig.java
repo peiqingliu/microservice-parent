@@ -28,7 +28,7 @@ public class SsoAuthorizationServerConfig extends AuthorizationServerConfigurerA
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
+        security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()").allowFormAuthenticationForClients();  //允许表单认证
     }
 
     /**
@@ -42,20 +42,30 @@ public class SsoAuthorizationServerConfig extends AuthorizationServerConfigurerA
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         //clients.withClientDetails();
         clients.inMemory()
-                .withClient("wuqianqian1")  ////客户端ID
-                .secret("wuqianqiansecrect1")
+                .withClient("client_1")  ////客户端ID
+                .secret("secret") //密匙
                 .authorizedGrantTypes("authorization_code","refresh_token")  // 设置验证方式 authorization_code：授权码类型。
+                //.authorizedGrantTypes("password","refresh_token")  //用户名密码模式
                 .scopes("all","read","write")
-                .autoApprove(false)
-                .accessTokenValiditySeconds(60)  //设置token过期时间
+                //.autoApprove(false)
+                .accessTokenValiditySeconds(10)  //设置token过期时间
                 .and()
-                .withClient("wuqianqian2")
-                .secret("wuqianqiansecrect2")
+                .withClient("client_2")
+                .secret("secret")
+                .authorizedGrantTypes("password","refresh_token")
+                //.authorizedGrantTypes("password","refresh_token")  //用户名密码模式  此处不支持
+                .scopes("all","read","write")
+                // true 直接跳转到客户端页面，false 跳转到用户确认授权页面
+                //.autoApprove(true)
+                .accessTokenValiditySeconds(10)  //设置token过期时间;
+                .and()
+                .withClient("client_3")
+                .secret("secret")
                 .authorizedGrantTypes("authorization_code","refresh_token")
                 .scopes("all","read","write")
                 // true 直接跳转到客户端页面，false 跳转到用户确认授权页面
-                .autoApprove(true)
-                .accessTokenValiditySeconds(60);  //设置token过期时间;
+                //.autoApprove(true)
+                .accessTokenValiditySeconds(1*60*60);  //设置token过期时间;
     }
 
     /**

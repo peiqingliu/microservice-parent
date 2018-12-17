@@ -69,6 +69,11 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
         super.channelReadComplete(ctx);
     }
 
+    /**
+     * //客户端与服务端断开连接的时候调用
+     * @param ctx
+     * @throws Exception
+     */
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         final String sessionId = ctx.channel().id().asLongText();

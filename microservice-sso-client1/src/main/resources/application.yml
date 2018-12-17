@@ -8,8 +8,8 @@ spring:
 security:
   oauth2:
     client:
-      client-id: wuqianqian1
-      client-secret: wuqianqiansecrect1
+      client-id: client_1
+      client-secret: secret
       user-authorization-uri: ${auth-server}/oauth/authorize   #请求认证的服务器地址  是授权用户被重定向的目标URL
       access-token-uri: ${auth-server}/oauth/token  #请求令牌的地址  是获取访问令牌的URL
     resource:

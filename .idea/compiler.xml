@@ -35,13 +35,18 @@
         <module name="microserviceelasticsearch" />
         <module name="microservicefegin" />
         <module name="microservicegateway" />
+        <module name="microservicejdbc" />
+        <module name="microservicemybatis" />
+        <module name="microservicemybatis2" />
         <module name="microservicenetty" />
+        <module name="microserviceresourcesserver" />
         <module name="microservicerocketmqclient" />
         <module name="microservicerocketmqserver" />
         <module name="microservicerpc" />
         <module name="microservicesocket" />
         <module name="microservicessoclient1" />
         <module name="microservicessoclient2" />
+        <module name="microservicessoresources" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

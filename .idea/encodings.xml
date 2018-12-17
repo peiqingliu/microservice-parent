@@ -19,7 +19,10 @@
     <file url="file://$PROJECT_DIR$/microservice-gateway" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-gateway-zuul-filter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-java8" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-jdbc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-msgsend" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis-2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-netty" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-provider-user" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-rabbitmq" charset="UTF-8" />
@@ -28,6 +31,7 @@
     <file url="file://$PROJECT_DIR$/microservice-redis-lock" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-redis-session" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-redis-session02" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-resources-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-rocketmq-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-rocketmq-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-rpc" charset="UTF-8" />
@@ -35,6 +39,7 @@
     <file url="file://$PROJECT_DIR$/microservice-socket" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-sso-client1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-sso-client2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-sso-resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-sso-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-swagger2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-system-beans" charset="UTF-8" />
