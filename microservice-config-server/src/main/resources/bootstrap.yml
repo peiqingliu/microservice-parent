@@ -8,8 +8,8 @@ spring:
       server:
         git:
           uri: https://github.com/peiqingliu/config-repo     # 配置Git仓库的地址
-          username: peiqingliu                                                       # Git仓库的账号
-          password: 13014009965aw                                                     # Git仓库的密码
+          username:                                                        # Git仓库的账号
+          password:                                                      # Git仓库的密码
 eureka:
   instance:
     prefer-ip-address: true
